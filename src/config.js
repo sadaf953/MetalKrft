@@ -1,10 +1,24 @@
-module.exports.SITE = {
-  name: 'TailNext',
-
-  origin: 'https://tailnext.vercel.app',
+const SITE = {
+  name: 'MetalKraft',
+  title: 'MetalKraft - Precision CNC Machining Services',
+  description: 'Expert CNC machining solutions for every industry. We deliver high-quality, precision-engineered parts with fast turnaround times.',
+  origin: 'https://metalkraft.com',
   basePathname: '/',
   trailingSlash: false,
+  googleAnalyticsId: '',
+  address: {
+    street: 'Plot 23, Industrial Area',
+    city: 'Sri City',
+    state: 'Andhra Pradesh',
+    country: 'India',
+  },
+  contact: {
+    email: 'harshavardhanpalagiri22@gmail.com',
+    phone: '+91 9876543210',
+    businessHours: 'Monday - Saturday: 9:00 AM - 6:00 PM',
+  },
+};
 
-  title: 'TailNext — Your website with Next.js + Tailwind CSS',
-  description: 'TailNext is a free and ready to start template to make your website using Next.js and Tailwind CSS.',
+module.exports = {
+  SITE,
 };

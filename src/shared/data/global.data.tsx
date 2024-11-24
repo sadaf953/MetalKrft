@@ -25,53 +25,28 @@ export const announcementData: AnnouncementProps = {
 export const headerData: HeaderProps = {
   links: [
     {
-      label: 'Pages',
-      icon: IconChevronDown,
-      links: [
-        {
-          label: 'Services',
-          href: '/services',
-        },
-        {
-          label: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          label: 'About us',
-          href: '/about',
-        },
-        {
-          label: 'Contact us',
-          href: '/contact',
-        },
-        {
-          label: 'FAQs',
-          href: '/faqs',
-        },
-        {
-          label: 'Terms & Conditions',
-          href: '/terms',
-        },
-        {
-          label: 'Privacy Policy',
-          href: '/privacy',
-        },
-      ],
+      label: 'Services',
+      href: '/',
     },
     {
-      label: 'Blog',
-      href: '/blog',
+      label: 'About',
+      href: '/about',
     },
     {
       label: 'Contact',
       href: '/contact',
     },
+    {
+      label: 'FAQs',
+      href: '/faqs',
+    },
   ],
   actions: [
     {
-      text: 'Download',
-      href: 'https://github.com/onwidget/tailnext',
-      targetBlank: true,
+      text: 'Get Quote',
+      href: '/contact#form',
+      targetBlank: false,
+      btnType: 'primary',
     },
   ],
   isSticky: true,
@@ -82,195 +57,102 @@ export const headerData: HeaderProps = {
 
 // Footer data
 export const footerData: FooterProps = {
-  title: 'TailNext',
-  links: [
-    {
-      label: 'Terms & Conditions',
-      href: '/terms',
-    },
-    {
-      label: 'Privacy Policy',
-      href: '/privacy',
-    },
-  ],
+  title: 'MetalKraft CNC',
+  links: [],
   columns: [
     {
-      title: 'Product',
+      title: 'Our Address',
       links: [
         {
-          label: 'Features',
-          href: '/',
+          label: 'Plot 23, Industrial Area',
+          href: '#',
         },
         {
-          label: 'Security',
-          href: '/',
+          label: 'Sri City, Andhra Pradesh',
+          href: '#',
         },
         {
-          label: 'Team',
-          href: '/',
-        },
-        {
-          label: 'Enterprise',
-          href: '/',
-        },
-        {
-          label: 'Customer stories',
-          href: '/',
-        },
-        {
-          label: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          label: 'Resources',
-          href: '/',
+          label: 'India',
+          href: '#',
         },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Contact',
       links: [
         {
-          label: 'Developer API',
-          href: '/',
+          label: 'Mobile: +91 9876543210',
+          href: 'tel:+919876543210',
         },
         {
-          label: 'Partners',
-          href: '/',
+          label: 'Email: metalkrft@gmail.com',
+          href: 'mailto:metalkrft@gmail.com',
         },
       ],
     },
     {
-      title: 'Support',
+      title: 'Working Hours',
       links: [
         {
-          label: 'Docs',
-          href: '/',
+          label: 'Monday - Saturday:',
+          href: '#',
         },
         {
-          label: 'Community Forum',
-          href: '/',
-        },
-        {
-          label: 'Professional Services',
-          href: '/',
-        },
-        {
-          label: 'Skills',
-          href: '/',
-        },
-        {
-          label: 'Status',
-          href: '/',
-        },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        {
-          label: 'About',
-          href: '/',
-        },
-        {
-          label: 'Blog',
-          href: '/blog',
-        },
-        {
-          label: 'Careers',
-          href: '/',
-        },
-        {
-          label: 'Press',
-          href: '/',
-        },
-        {
-          label: 'Inclusion',
-          href: '/',
-        },
-        {
-          label: 'Social Impact',
-          href: '/',
-        },
-        {
-          label: 'Shop',
-          href: '/',
+          label: '9:00 AM - 6:00 PM',
+          href: '#',
         },
       ],
     },
   ],
   socials: [
     { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
   ],
   footNote: (
-    <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm">
-      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      <span>
-        Made by{' '}
-        <a
-          className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
-          href="https://onwidget.com/"
-        >
-          {' '}
-          onWidget
-        </a>{' '}
-        · All rights reserved.
-      </span>
+    <div className="mr-4 text-sm dark:text-slate-400">
+      <span className="float-left mr-1.5"> {new Date().getFullYear()}</span>
+      <span>MetalKraft CNC. All rights reserved.</span>
     </div>
   ),
 };
 
 // Footer2 data
 export const footerData2: FooterProps = {
-  links: [
-    {
-      label: 'Terms & Conditions',
-      href: '/terms',
-    },
-    {
-      label: 'Privacy Policy',
-      href: '/privacy',
-    },
-  ],
+  links: [],
   columns: [
     {
-      title: 'Address',
-      texts: ['51 Phasellus Avenue Maecenas', 'Aliquam, AQ 52098'],
+      title: 'Our Address',
+      texts: [
+        'MetalKraft CNC',
+        'Plot 23, Industrial Area',
+        'Sri City, Andhra Pradesh, India'
+      ],
     },
     {
-      title: 'Phone',
-      texts: ['Reception: +105 123 4567', 'Office: +107 235 7890'],
+      title: 'Contact',
+      texts: [
+        'Mobile: +91 9876543210',
+        'Email: metalkrft@gmail.com'
+      ],
     },
     {
-      title: 'Email',
-      texts: ['Office: info@example.com', 'Site: https://example.com'],
+      title: 'Working Hours',
+      texts: [
+        'Monday - Saturday:',
+        '9:00 AM - 6:00 PM'
+      ],
     },
   ],
   socials: [
     { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
   ],
   footNote: (
-    <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm">
-      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      <span>
-        Made by{' '}
-        <a
-          className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
-          href="https://onwidget.com/"
-        >
-          {' '}
-          onWidget
-        </a>{' '}
-        · All rights reserved.
-      </span>
+    <div className="mr-4 text-sm dark:text-slate-400">
+      <span className="float-left mr-1.5"> {new Date().getFullYear()}</span>
+      <span>MetalKraft CNC. All rights reserved.</span>
     </div>
   ),
 };

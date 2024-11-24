@@ -6,8 +6,8 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
   return (
     <section id="heroOne">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="py-12 md:py-20">
-          <div className="mx-auto max-w-4xl pb-10 text-center md:pb-16">
+        <div className="py-8 md:py-12">
+          <div className="mx-auto max-w-4xl pb-8 text-center md:pb-12">
             {tagline && (
               <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
                 {tagline}
@@ -27,14 +27,14 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
             </div>
           </div>
           {image && (
-            <div className="relative m-auto max-w-5xl">
+            <div className="relative m-auto max-w-4xl">
               <Image
                 className="mx-auto h-auto w-full rounded-md bg-gray-400 dark:bg-slate-700"
                 src={image.src}
                 alt={image.alt}
-                width={1024}
-                height={607}
-                sizes="(max-width: 64rem) 100vw, 1024px"
+                width={800}
+                height={475}
+                sizes="(max-width: 48rem) 100vw, 800px"
                 loading="eager"
                 placeholder="blur"
                 priority

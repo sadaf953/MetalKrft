@@ -6,13 +6,10 @@ export const heroFaqs: HeroProps = {
   title: 'Frequently Asked Questions',
   subtitle: (
     <>
-      <span className="hidden md:inline">
-        {`Whether you need help using our Next.js and Tailwind CSS templates, solving problems, or just want some useful tips, our FAQs are here to assist you.`}
-      </span>{' '}
-      Explore them to optimize your experience with our website and products.
+      Find answers to common questions about our CNC machining services, capabilities, and processes. If you have additional questions, feel free to contact us.
     </>
   ),
-  tagline: 'Demo FAQs Page',
+  tagline: 'FAQs',
 };
 
 // FAQS4 data on FAQs page *******************
@@ -20,96 +17,64 @@ export const faqs4Faqs: FAQsProps = {
   id: 'faqsFour-on-faqs',
   hasBackground: true,
   header: {
-    title: 'Find what you need',
-    subtitle: 'Get quick answers to your questions: Everything you need in one spot.',
+    title: 'Common Questions',
+    subtitle: 'Everything you need to know about our CNC machining services.',
     position: 'center',
   },
   tabs: [
     {
       link: {
-        label: 'General',
+        label: 'Services & Capabilities',
         href: '/tab1',
       },
       items: [
         {
-          title: 'What do I need to start?',
-          description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
+          title: 'What industries do you serve?',
+          description: 'We specialize in serving automotive, aerospace, electronics, and general engineering industries. Our precision CNC machining capabilities cater to diverse manufacturing needs across these sectors.',
         },
         {
-          title: 'How to install the NextJS + Tailwind CSS template?',
-          description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
+          title: 'What materials do you work with?',
+          description: 'We handle a wide range of materials including metals like aluminum, steel, brass, and plastics like nylon and acrylic. Our machines are equipped to work with various material specifications and grades.',
         },
         {
-          title: "What's something that you completely don't understand?",
-          description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
+          title: 'Can you handle custom designs?',
+          description: 'Absolutely! We work with client specifications to deliver tailor-made components. Our team can work from your CAD files or help develop designs based on your requirements.',
         },
         {
-          title: "What's an example of when you changed your mind?",
-          description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
-        },
-        {
-          title: 'What is something that you would really like to try again?',
-          description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
-        },
-        {
-          title: 'If you could only ask one question to each person you meet, what would that question be?',
-          description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
+          title: 'What are your minimum order quantities?',
+          description: 'We accommodate both prototype and production runs. Our capacity allows us to handle orders ranging from single prototypes to large production batches.',
         },
       ],
     },
     {
       link: {
-        label: 'Plans, prices and payments',
+        label: 'Process & Quality',
         href: '/tab2',
       },
       items: [
         {
-          title: 'Which plan is best for me?',
-          description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
+          title: 'What is the typical turnaround time?',
+          description: 'Depending on project complexity, our standard delivery time ranges from 1 to 4 weeks. We provide specific timeline estimates after reviewing your project requirements and specifications.',
         },
         {
-          title: 'What are my payment options?',
-          description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
+          title: 'Do you provide quality certification?',
+          description: 'Yes, we provide detailed quality inspection reports and material certifications as needed. Our quality control processes ensure all components meet specified tolerances and industry standards.',
         },
         {
-          title: 'How do I change my plan to a different one?',
-          description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
+          title: 'How do you ensure quality control?',
+          description: 'We maintain strict quality control measures throughout the manufacturing process. Each part undergoes thorough inspection using precision measurement tools, and we provide detailed quality reports.',
         },
         {
-          title: 'What happen at the end of my free trial?',
-          description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
+          title: 'What file formats do you accept?',
+          description: 'We accept most common CAD file formats including STEP, IGES, DWG, and Solidworks files. Our engineering team can work with your preferred format to ensure accurate manufacturing.',
         },
         {
-          title: 'Can I import data from other tools?',
-          description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
+          title: 'Do you offer expedited manufacturing services?',
+          description: 'Yes, we offer rush manufacturing services for urgent projects. While our standard lead times are 1-4 weeks, we can accommodate faster turnaround times for critical deadlines. Additional charges may apply for expedited services.',
         },
         {
-          title: 'Can I cancel my plan at any time?',
-          description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
-        },
-      ],
-    },
-    {
-      link: {
-        label: 'Others',
-        href: '/tab3',
-      },
-      items: [
-        {
-          title: 'How do I download the template?',
-          description: `In ullamcorper pellentesque ante, nec commodo ex euismod viverra. Phasellus facilisis, justo a bibendum pellentesque, nibh est egestas lectus, volutpat ullamcorper arcu ante ac dolor.`,
-        },
-        {
-          title: 'How do I customize the template?',
-          description: `Pellentesque semper euismod malesuada. Curabitur quis lectus tortor. Aliquam efficitur pretium tellus, ut sagittis turpis dignissim eget. Etiam scelerisque nec risus eget iaculis. Nunc maximus metus id felis dapibus, sed ullamcorper sapien faucibus.`,
-        },
-        {
-          title: 'Does the template come with any tutorials or instructions?',
-          description: `Sed sagittis arcu suscipit auctor suscipit. Nam dapibus risus vitae tristique fermentum. In egestas turpis elit, id gravida diam dictum eu. Ut dictum libero ut rhoncus egestas. Ut sit amet tortor blandit, faucibus tellus vitae, consequat purus. Nullam id odio enim.`,
-        },
-        {
-          title: 'Are there any additional fees or charges for using the template?',
-          description: `Fusce efficitur, augue et vulputate pharetra, augue turpis viverra turpis, id tempor purus eros sed erat. Curabitur blandit eget sem vitae malesuada.`,
+          title: 'What are your tolerance capabilities?',
+          description: 'Our CNC machines can achieve tight tolerances down to ±0.001 inches (0.025mm) depending on the material and geometry. We regularly work with precision components requiring strict dimensional accuracy.',
         },
       ],
     },
@@ -120,11 +85,12 @@ export const faqs4Faqs: FAQsProps = {
 export const callToActionFaqs: CallToActionProps = {
   id: 'callToAction-on-faqs',
   hasBackground: true,
+  className: 'bg-gray-100 dark:bg-gray-800/40',
   title: 'Still have questions?',
-  subtitle:
-    'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut in leo odio. Cras finibus ex a ante convallis ullamcorper.',
+  subtitle: 'Contact our team for detailed information about our CNC machining services.',
   callToAction: {
-    text: 'Contact us',
+    text: 'Contact Us',
     href: '/contact',
+    targetBlank: false,
   },
 };

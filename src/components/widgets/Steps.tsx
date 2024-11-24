@@ -18,7 +18,7 @@ const Steps = ({
     <div
       className={`flex flex-col gap-8 md:gap-12 ${isReversed ? 'md:flex-row-reverse' : ''} ${
         isImageDisplayed ? 'md:flex-row' : ''
-      }`}
+      } bg-blue-50 dark:bg-blue-900/20 p-8 md:p-12 rounded-xl`}
     >
       <div
         className={`md:py-4 ${

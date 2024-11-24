@@ -18,9 +18,9 @@ const Features4 = ({
   <WidgetWrapper
     id={id}
     hasBackground={hasBackground}
-    containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}
+    containerClass={`py-16 md:py-24 lg:py-32 ${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}
   >
-    {header && <Headline header={header} titleClass="text-4xl md:text-5xl" />}
+    {header && <Headline header={header} titleClass="text-5xl md:text-6xl font-bold" />}
     {isImageDisplayed && (
       <div aria-hidden="true" className="aspect-w-16 aspect-h-7">
         {image && (
@@ -39,11 +39,11 @@ const Features4 = ({
       items={items}
       columns={columns}
       defaultColumns={4}
-      containerClass={`mt-12 ${columns === 2 ? 'max-w-5xl' : ''}`}
+      containerClass={`mt-16 ${columns === 2 ? 'max-w-5xl' : ''}`}
       panelClass={`flex max-w-full ${columns === 2 ? ' sm:max-w-md mx-auto' : ''}`}
-      titleClass="text-lg font-semibold mb-2"
-      descriptionClass="mt-0.5"
-      iconClass="flex-shrink-0 mr-4 mt-1 w-6 h-6 text-primary-800 dark:text-primary-600"
+      titleClass="text-xl md:text-2xl font-semibold mb-3"
+      descriptionClass="mt-2 text-lg"
+      iconClass="flex-shrink-0 mr-6 mt-1 w-10 h-10 text-primary-800 dark:text-primary-600"
     />
   </WidgetWrapper>
 );

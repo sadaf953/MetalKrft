@@ -14,16 +14,19 @@ const Form = ({
   btn,
   btnPosition,
   containerClass,
+  emailTo,
 }: FormProps) => {
-  const [inputValues, setInputValues] = useState([]);
+  const [inputValues, setInputValues] = useState({});
+  const [fileUpload, setFileUpload] = useState<File | null>(null);
   const [radioBtnValue, setRadioBtnValue] = useState('');
   const [textareaValues, setTextareaValues] = useState('');
   const [checkedState, setCheckedState] = useState<boolean[]>(new Array(checkboxes && checkboxes.length).fill(false));
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Update the value of the entry fields
   const changeInputValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-
     setInputValues({
       ...inputValues,
       [name]: value,
@@ -51,61 +54,82 @@ const Form = ({
     });
   };
 
+  // Handle file upload
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      setFileUpload(event.target.files[0]);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const formData = new FormData();
+      
+      // Add regular form fields
+      Object.entries(inputValues).forEach(([key, value]) => {
+        formData.append(key, value as string);
+      });
+      formData.append('message', textareaValues);
+      formData.append('emailTo', emailTo || 'metalkrft@gmail.com');
+      
+      // Add file if present
+      if (fileUpload) {
+        formData.append('cadFile', fileUpload);
+      }
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error('Failed to send message');
+
+      setSubmitStatus('success');
+      setInputValues({});
+      setTextareaValues('');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <form id="contactForm" className={twMerge('', containerClass)}>
+    <form id="contactForm" className={twMerge('', containerClass)} onSubmit={handleSubmit}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
       {description && <p className="mb-4">{description}</p>}
       <div className="mb-6">
         {/* Inputs */}
         <div className="mx-0 mb-1 sm:mb-4">
-          {inputs &&
-            inputs.map(({ type, label, name, autocomplete, placeholder }, index) => (
-              <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
-                <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
-                  {label}
-                </label>
-                <input
-                  type={type}
-                  id={name}
-                  name={name}
-                  autoComplete={autocomplete}
-                  value={inputValues[index]}
-                  onChange={changeInputValueHandler}
-                  placeholder={placeholder}
-                  className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                />
-              </div>
-            ))}
-        </div>
-        {/* Radio buttons */}
-        {radioBtns && (
-          <div className="mx-0 mb-1 sm:mb-3">
-            <span className="pb-1 text-xs uppercase tracking-wider">{radioBtns?.label}</span>
-            <div className="flex flex-wrap">
-              {radioBtns.radios.map(({ label }, index) => (
-                <div key={`radio-btn-${index}`} className="mr-4 items-baseline">
-                  <input
-                    id={label}
-                    type="radio"
-                    name={label}
-                    value={`value${index}`}
-                    checked={radioBtnValue === `value${index}`}
-                    onChange={changeRadioBtnsHandler}
-                    className="cursor-pointer"
-                  />
-                  <label htmlFor={label} className="ml-2">
-                    {label}
-                  </label>
-                </div>
-              ))}
+          {inputs && inputs.map(({ type, label, name, autocomplete, placeholder, accept }, index) => (
+            <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
+              <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
+                {label}
+              </label>
+              <input
+                type={type}
+                name={name}
+                id={name}
+                autoComplete={autocomplete}
+                placeholder={placeholder}
+                accept={accept}
+                onChange={type === 'file' ? handleFileUpload : changeInputValueHandler}
+                className="w-full rounded-md border border-gray-400 py-2 px-3 dark:border-gray-700 dark:bg-gray-700"
+              />
             </div>
-          </div>
-        )}
+          ))}
+        </div>
+
         {/* Textarea */}
         {textarea && (
-          <div className={`mx-0 mb-1 sm:mb-4`}>
+          <div className="mx-0 mb-1 sm:mb-4">
             <label htmlFor={textarea.name} className="pb-1 text-xs uppercase tracking-wider">
-              {textarea.label}
+              Message
             </label>
             <textarea
               id={textarea.name}
@@ -113,42 +137,33 @@ const Form = ({
               cols={textarea.cols}
               rows={textarea.rows}
               value={textareaValues}
-              onChange={(e) => changeTextareaHandler(e)}
+              onChange={changeTextareaHandler}
               placeholder={textarea.placeholder}
               className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+              required
             />
           </div>
         )}
-        {/* Checkboxes */}
-        {checkboxes && (
-          <div className="mx-0 mb-1 sm:mb-4">
-            {checkboxes.map(({ label }, index) => (
-              <div key={`checkbox-${index}`} className="mx-0 my-1 flex items-baseline">
-                <input
-                  id={label}
-                  type="checkbox"
-                  name={label}
-                  checked={checkedState[index]}
-                  onChange={() => changeCheckboxHandler(index)}
-                  className="cursor-pointer"
-                />
-                <label htmlFor={label} className="ml-2">
-                  {label}
-                </label>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-      {btn && (
-        <div
-          className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
-        >
-          <button type={btn.type || 'button'} className="btn btn-primary sm:mb-0">
-            {btn.title}
+
+        {/* Submit Button */}
+        <div className={`${btnPosition ? `text-${btnPosition}` : 'text-right'} mt-4`}>
+          <button
+            type={btn.type}
+            className="btn btn-primary cursor-pointer rounded-md bg-primary-600 px-6 py-2 text-white disabled:cursor-not-allowed disabled:opacity-50"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : btn.title}
           </button>
         </div>
-      )}
+
+        {/* Status Messages */}
+        {submitStatus === 'success' && (
+          <div className="mt-4 text-center text-green-600">Message sent successfully!</div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="mt-4 text-center text-red-600">Failed to send message. Please try again.</div>
+        )}
+      </div>
     </form>
   );
 };

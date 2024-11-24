@@ -3,7 +3,13 @@ import { twMerge } from 'tailwind-merge';
 import { CallToActionType, LinkOrButton } from '~/shared/types';
 
 const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButton) => {
-  const { text, href, icon: Icon, targetBlank } = callToAction as CallToActionType;
+  const { text, href, icon: Icon, targetBlank, btnType } = callToAction as CallToActionType;
+
+  const getLinkClass = () => {
+    const baseClass = 'inline-flex items-center justify-center w-full sm:mb-0';
+    const btnClass = btnType === 'primary' ? 'btn-primary' : btnType === 'secondary' ? 'btn-secondary' : '';
+    return twMerge(baseClass, btnClass, linkClass);
+  };
 
   return (
     <>
@@ -11,7 +17,7 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
         <div className={twMerge('flex w-auto cursor-pointer', containerClass)}>
           {targetBlank ? (
             <Link
-              className={twMerge('inline-flex items-center justify-center w-full sm:mb-0', linkClass)}
+              className={getLinkClass()}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -20,7 +26,7 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
               {text}
             </Link>
           ) : (
-            <Link className={twMerge('inline-flex items-center justify-center w-full sm:mb-0 ', linkClass)} href={href}>
+            <Link className={getLinkClass()} href={href}>
               {Icon && <Icon className={twMerge(`w-5 h-5 ${text ? 'mr-1 rtl:mr-0 rtl:ml-1' : ''}`, iconClass)} />}
               {text}
             </Link>

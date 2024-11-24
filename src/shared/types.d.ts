@@ -1,11 +1,13 @@
 import { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
+import { ReactElement, MouseEventHandler } from 'react';
 import type { TablerIcon } from "@tabler/icons-react"
 
 type Widget = {
   id?: string;
   /** Does it have a background? */
   hasBackground?: boolean;
+  /** Custom className for styling */
+  className?: string;
 };
 
 type WrapperTagProps = Widget & {
@@ -16,6 +18,7 @@ type WrapperTagProps = Widget & {
 type BackgroundProps = {
   children?: React.ReactNode;
   hasBackground?: boolean;
+  className?: string;
 };
 
 type Header = {
@@ -39,6 +42,7 @@ type CallToActionType = {
   href: string;
   icon?: Icon;
   targetBlank?: boolean;
+  btnType?: 'primary' | 'secondary' | string;
 };
 
 type LinkOrButton = {
@@ -60,6 +64,7 @@ type Input = {
   name?: string;
   autocomplete?: string;
   placeholder?: string;
+  accept?: string;
 };
 
 type Textarea = {
@@ -100,6 +105,7 @@ type FormProps = {
   btn: Button;
   btnPosition?: 'center' | 'right' | 'left';
   containerClass?: string;
+  emailTo?: string;
 };
 
 type Image = {
@@ -268,13 +274,12 @@ type CallToActionProps = Widget & {
 type FeaturesProps = Widget & {
   header?: Header;
   items?: Array<Item>;
-  /** How many columns should it have? */
   columns?: 1 | 2 | 3;
-  /** Do you want the image to be displayed? */
   isImageDisplayed?: boolean;
   image?: Image;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+  iconClass?: string;
 };
 
 type ContentProps = Widget & {
@@ -289,11 +294,10 @@ type ContentProps = Widget & {
 type StepsProps = Widget & {
   header?: Header;
   items: Array<Item>;
-  /** Do you want the image to be displayed? */
   isImageDisplayed?: boolean;
   image?: Image;
-  /** Do you want to reverse the widget? */
   isReversed?: boolean;
+  isAfterContent?: boolean;
 };
 
 type TeamProps = Widget & {
@@ -354,7 +358,6 @@ type FooterProps = {
 type HeaderProps = {
   links?: Array<MenuLink>;
   actions?: Array<CallToActionType>;
-  // actions?: Array<ActionLink>;
   isSticky?: boolean;
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
