@@ -1,40 +1,43 @@
 import {
   ContactProps,
+  ContentProps,
   FAQsProps,
   FeaturesProps,
+  Features2Props,
   HeroProps,
+  Hero2Props,
   StepsProps,
   TestimonialsProps,
 } from '~/shared/types';
 import hero2Img from '~/assets/images/hero.jpg';
 import millingImg from '~/assets/images/CNC milling.png';
 import turningImg from '~/assets/images/turning.png';
-import processImg from '~/assets/images/process.png';
 import {
-  IconBrandTailwind,
-  IconComponents,
-  IconListCheck,
-  IconRocket,
-  IconTools,
-  IconGitBranch,
-  IconTool,
-  IconSettings,
-  Icon3dCubeSphere,
-  IconDeviceDesktop,
-  IconBuildingFactory,
-  IconFileSearch,
-  IconList,
+  IconArrowsRightLeft,
   IconBulb,
-  IconCpu,
-  IconRotate,
-  IconEngine,
-  IconDeviceLaptop,
+  IconBrandTailwind,
   IconBuildingBridge,
-  IconBolt,
-  IconRuler,
-  IconRecycle,
+  IconBuildingFactory,
+  IconCheck,
+  IconComponents,
+  IconCpu,
+  IconDeviceDesktop,
+  IconDeviceLaptop,
+  IconEngine,
+  IconFileSearch,
   IconGavel,
+  IconGitBranch,
+  IconList,
+  IconListCheck,
+  IconRecycle,
+  IconRocket,
+  IconRotate,
+  IconRuler,
+  IconSettings,
   IconShieldCheck,
+  IconTool,
+  IconTools,
+  Icon3dCubeSphere,
 } from '@tabler/icons-react';
 
 // Hero2 data on About page *******************
@@ -61,6 +64,8 @@ export const hero2About: HeroProps = {
     href: '/',
   }
 };
+
+
 
 // FeaturesFour data on About page *******************
 export const featuresFourAbout: FeaturesProps = {
@@ -128,48 +133,85 @@ export const featuresFourAboutTwo: FeaturesProps = {
   ],
 };
 
-// Steps data on About page *******************
-export const stepsAbout: StepsProps = {
-  id: 'steps-on-about',
-  hasBackground: false,
-  isReversed: false,
-  isAfterContent: false,
-  image: {
-    src: processImg,
-    alt: 'Our CNC Manufacturing Process',
-  },
+// Features data on About page *******************
+export const featuresHome: FeaturesProps = {
+  id: 'features-on-home',
+  hasBackground: true,
+  columns: 3,
   header: {
-    title: 'Our Process',
+    title: (
+      <>
+        Why Choose <span className="whitespace-nowrap">MetalKraft CNC</span>
+      </>
+    ),
     subtitle:
-      'From concept to completion, we ensure quality at every step',
+      "Experience excellence in precision manufacturing with our state-of-the-art CNC capabilities, industry expertise, and commitment to quality.",
+    tagline: 'Features',
   },
   items: [
     {
-      title: 'Design Review',
+      title: 'State-of-the-Art CNC Machinery',
       description:
-        'Our engineers review your designs for manufacturability',
-      icon: IconFileSearch,
-    },
-    {
-      title: 'Material Selection',
-      description:
-        'Choose from a wide range of materials suited for your application',
-      icon: IconList,
-    },
-    {
-      title: 'Production',
-      description:
-        'State-of-the-art CNC machines for precise manufacturing',
-      icon: IconBuildingFactory,
-    },
-    {
-      title: 'Quality Control',
-      description:
-        'Rigorous inspection and testing of finished components',
+        'Our Vertical Machining Centers (VMCs) and CNC Turning Machines deliver unmatched accuracy, reliability, and efficiency for diverse applications.',
       icon: IconComponents,
+      callToAction: {
+        text: 'Learn more',
+        href: '/services',
+      },
+    },
+    {
+      title: 'Tailored to Your Needs',
+      description:
+        'We provide bespoke solutions from high-precision turning to prototype development, ensuring your project meets industry-specific requirements.',
+      icon: IconListCheck,
+      callToAction: {
+        text: 'Learn more',
+        href: '/services',
+      },
+    },
+    {
+      title: 'Exceeding Industry Standards',
+      description:
+        'With a commitment to quality, MetalKraft CNC adheres to stringent inspection protocols, ensuring products meet and exceed client expectations.',
+      icon: IconCheck,
+      callToAction: {
+        text: 'Learn more',
+        href: '/quality',
+      },
+    },
+    {
+      title: 'Efficient and Timely Delivery',
+      description:
+        'Our streamlined workflows and advanced CAD/CAM integrations ensure projects are completed on schedule without compromising precision.',
+      icon: IconRocket,
+      callToAction: {
+        text: 'Learn more',
+        href: '/process',
+      },
+    },
+    {
+      title: 'Environmentally Conscious Manufacturing',
+      description:
+        'We integrate eco-friendly practices into our machining processes, from resource-efficient operations to effective waste management.',
+      icon: IconArrowsRightLeft,
+      callToAction: {
+        text: 'Learn more',
+        href: '/sustainability',
+      },
+    },
+    {
+      title: 'Client-Centered Collaboration',
+      description:
+        'We work closely with clients to develop innovative machining solutions, fostering long-term partnerships.',
+      icon: IconBulb,
+      callToAction: {
+        text: 'Learn more',
+        href: '/contact',
+      },
     },
   ],
 };
+
 
 // Features3 data on About page *******************
 export const features3About: FeaturesProps = {
@@ -221,41 +263,14 @@ export const features3About: FeaturesProps = {
   ],
 };
 
-// Features data on About page *******************
-export const featuresAbout: FeaturesProps = {
-  id: 'features-on-about',
-  hasBackground: true,
-  className: 'bg-slate-100 dark:bg-slate-800/40',
-  header: {
-    title: 'Quality Assurance',
-    subtitle:
-      'Our commitment to excellence',
-  },
-  columns: 2,
-  items: [
-    {
-      title: 'ISO 9001:2015 Certified',
-      description:
-        'Maintaining highest quality standards',
-      icon: IconComponents,
-    },
-    {
-      title: 'Advanced Inspection',
-      description:
-        'State-of-the-art measurement equipment',
-      icon: IconRuler,
-    },
-  ],
-};
-
 // Features data for Accepted Materials section
 export const featuresAcceptedMaterials: FeaturesProps = {
   id: 'features-accepted-materials',
   hasBackground: true,
   className: 'bg-slate-100 dark:bg-slate-800/40',
   header: {
-    title: 'Accepted Materials',
-    subtitle: 'We work with a wide range of materials to meet your manufacturing needs',
+    title: 'Materials We Work With',
+    subtitle: 'We offer machining services for a wide range of materials to meet your specific requirements.',
   },
   columns: 4,
   items: [
@@ -306,41 +321,61 @@ export const featuresAcceptedMaterials: FeaturesProps = {
       description: 'Versatile engineering polymers',
       icon: IconRecycle,
       className: 'hover:bg-green-50 dark:hover:bg-green-900/20',
-    },
+    }
   ],
 };
 
-// Testimonials data on About page *******************
-export const testimonialsAbout: TestimonialsProps = {
-  id: 'testimonials-on-about',
+// Content data on About page *******************
+export const contentAbout: ContentProps = {
+  id: 'content-on-about',
   hasBackground: false,
-  header: {
-    title: 'What Our Clients Say',
-    subtitle:
-      'Real stories from our valued customers',
-  },
-  items: [
-    {
-      title: 'Excellent Service',
-      description:
-        'MetalKraft CNC brings a fresh approach to precision machining. Their attention to detail and commitment to customer satisfaction stands out.',
-      avatar: {
-        src: 'https://picsum.photos/200/300',
-        alt: 'Client Avatar',
-      },
-      name: 'John Doe',
-      designation: 'CEO, XYZ Corporation',
-    },
-    {
-      title: 'Impressive Quality',
-      description:
-        'We were impressed by the quality of the machined components provided by MetalKraft CNC. Their attention to detail and precision is unmatched.',
-      avatar: {
-        src: 'https://picsum.photos/200/301',
-        alt: 'Client Avatar',
-      },
-      name: 'Jane Smith',
-      designation: 'Procurement Manager, ABC Inc.',
-    },
-  ],
+  content: `
+    <div class="flex flex-col lg:flex-row gap-8">
+      <div class="basis-1/2">
+        <h3 class="text-2xl font-bold mb-4">Our Manufacturing Excellence</h3>
+        <p class="mb-8">
+          At MetalKraft CNC, we combine advanced technology with precision craftsmanship. Our state-of-the-art facility is equipped with the latest CNC machines and quality control systems, ensuring exceptional results for every project.
+        </p>
+        <p class="mb-8">
+          Our team of skilled machinists and engineers brings years of experience and expertise to every project. We take pride in our ability to handle complex manufacturing challenges and deliver solutions that exceed expectations.
+        </p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div>
+            <h4 class="font-semibold mb-2">Advanced Capabilities</h4>
+            <ul class="list-disc list-inside">
+              <li>5-Axis Machining</li>
+              <li>Precision Turning</li>
+              <li>Complex Milling</li>
+              <li>Prototype Development</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Industry Solutions</h4>
+            <ul class="list-disc list-inside">
+              <li>Aerospace</li>
+              <li>Medical Devices</li>
+              <li>Automotive</li>
+              <li>Industrial Equipment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="basis-1/2">
+        <div class="grid grid-cols-2 gap-4">
+          <img
+            class="w-full h-80 object-cover rounded-md"
+            src="/images/machine-1.jpg"
+            alt="CNC Machining Center"
+            loading="lazy"
+          />
+          <img
+            class="w-full h-80 object-cover rounded-md"
+            src="/images/machine-2.jpg"
+            alt="Quality Inspection"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  `,
 };

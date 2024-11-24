@@ -20,6 +20,7 @@ import {
   IconBuildingFactory2,
   IconCertificate,
   IconTruck,
+  IconRuler,
 } from '@tabler/icons-react';
 import {
   CallToActionProps,
@@ -35,7 +36,6 @@ import {
 import heroImg from '~/assets/images/hero.jpg';
 import millingImg from '~/assets/images/CNC MILLING.png';
 import turningImg from '~/assets/images/turning.png';
-import processImg from '~/assets/images/process.png';
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {
@@ -74,87 +74,49 @@ export const heroHome: HeroProps = {
     src: heroImg,
     alt: 'Hero MetalKraft CNC',
   },
-};
-
-
-// Features data on Home page *******************
-export const featuresHome: FeaturesProps = {
-  id: 'features-on-home',
-  hasBackground: true,
-  columns: 3,
-  header: {
-    title: (
-      <>
-        Why Choose <span className="whitespace-nowrap">MetalKraft CNC</span>
-      </>
-    ),
-    subtitle:
-      "Experience excellence in precision manufacturing with our state-of-the-art CNC capabilities, industry expertise, and commitment to quality.",
-    tagline: 'Features',
-  },
   items: [
     {
-      title: 'State-of-the-Art CNC Machinery',
+      title: 'ISO 9001:2015 Certified',
       description:
-        'Our Vertical Machining Centers (VMCs) and CNC Turning Machines deliver unmatched accuracy, reliability, and efficiency for diverse applications.',
+        'Maintaining highest quality standards',
       icon: IconComponents,
-      callToAction: {
-        text: 'Learn more',
-        href: '/services',
-      },
     },
     {
-      title: 'Tailored to Your Needs',
+      title: 'Advanced Inspection',
       description:
-        'We provide bespoke solutions from high-precision turning to prototype development, ensuring your project meets industry-specific requirements.',
-      icon: IconListCheck,
-      callToAction: {
-        text: 'Learn more',
-        href: '/services',
-      },
-    },
-    {
-      title: 'Exceeding Industry Standards',
-      description:
-        'With a commitment to quality, MetalKraft CNC adheres to stringent inspection protocols, ensuring products meet and exceed client expectations.',
-      icon: IconCheck,
-      callToAction: {
-        text: 'Learn more',
-        href: '/quality',
-      },
-    },
-    {
-      title: 'Efficient and Timely Delivery',
-      description:
-        'Our streamlined workflows and advanced CAD/CAM integrations ensure projects are completed on schedule without compromising precision.',
-      icon: IconRocket,
-      callToAction: {
-        text: 'Learn more',
-        href: '/process',
-      },
-    },
-    {
-      title: 'Environmentally Conscious Manufacturing',
-      description:
-        'We integrate eco-friendly practices into our machining processes, from resource-efficient operations to effective waste management.',
-      icon: IconArrowsRightLeft,
-      callToAction: {
-        text: 'Learn more',
-        href: '/sustainability',
-      },
-    },
-    {
-      title: 'Client-Centered Collaboration',
-      description:
-        'We work closely with clients to develop innovative machining solutions, fostering long-term partnerships.',
-      icon: IconBulb,
-      callToAction: {
-        text: 'Learn more',
-        href: '/contact',
-      },
+        'State-of-the-art measurement equipment',
+      icon: IconRuler,
     },
   ],
 };
+
+export const featuresAbout: FeaturesProps = {
+  id: 'features-on-about',
+  hasBackground: true,
+  className: 'bg-slate-100 dark:bg-slate-800/40',
+  header: {
+    title: 'Quality Assurance',
+    subtitle:
+      'Our commitment to excellence',
+  },
+  columns: 2,
+  items: [
+    {
+      title: 'ISO 9001:2015 Certified',
+      description:
+        'Maintaining highest quality standards',
+      icon: IconComponents,
+    },
+    {
+      title: 'Advanced Inspection',
+      description:
+        'State-of-the-art measurement equipment',
+      icon: IconRuler,
+    },
+  ],
+};
+
+// Features data on Home page *******************
 
 // Industry Solutions data on Home page *******************
 export const features2Home: FeaturesProps = {
@@ -235,27 +197,27 @@ export const contentHomeOne: ContentProps = {
   id: 'contentOne-on-home-one',
   hasBackground: true,
   header: {
-    title: 'Vertical Machining Centers (VMCs)',
-    subtitle: 'Our VMCs deliver high-precision 3-axis milling operations, with future scalability for 4-axis and 5-axis machining.',
+    title: 'Advanced CNC Machining Solutions',
+    subtitle: 'Precision Engineering for Complex Manufacturing Challenges',
     tagline: 'Capabilities',
   },
   content:
-    'They are perfect for producing intricate components, molds, and dies, catering to industries like aerospace and automotive.',
+    'Our state-of-the-art CNC machining centers combine cutting-edge technology with expert craftsmanship to deliver exceptional results for your most demanding projects.',
   items: [
     {
-      title: 'CNC Turning Machines',
+      title: 'Vertical Machining Centers',
       description:
-        'Our CNC turning machines are designed for high-accuracy operations such as facing, grooving, threading, and knurling.',
+        'High-precision 3-axis to 5-axis milling capabilities for complex components, molds, and dies. Perfect for aerospace and automotive parts.',
     },
     {
-      title: 'Ideal Applications',
+      title: 'CNC Turning Solutions',
       description:
-        'Ideal for cylindrical components like shafts and bushings, these machines ensure repeatability and exceptional quality.',
+        'Advanced turning centers equipped for high-accuracy operations including facing, grooving, threading, and custom profile turning.',
     },
     {
-      title: 'Custom Solutions',
+      title: 'Multi-Material Expertise',
       description:
-        'Both machines provide versatility in material handling, including metals (aluminum, steel, brass) and plastics (nylon, acrylic). This versatility enables tailored solutions for complex projects.',
+        'Comprehensive experience working with metals, plastics, and exotic materials. Our versatile capabilities ensure optimal results for any material.',
     },
   ],
   image: {
@@ -266,34 +228,25 @@ export const contentHomeOne: ContentProps = {
   isAfterContent: false,
 };
 
+// Content data on Home page *******************
 export const contentHomeTwo: ContentProps = {
   id: 'contentOne-on-home-two',
   hasBackground: true,
-  header: {
-    title: 'Advanced Manufacturing Capabilities',
-    subtitle: 'State-of-the-art machinery combined with expert craftsmanship',
-  },
   content:
-    'Our advanced CNC machines and skilled operators work together to deliver precision components that meet your exact specifications.',
+    'MetalKraft specializes in delivering end-to-end manufacturing solutions, from prototype development to full-scale production. Our commitment to quality and precision ensures your components meet exact specifications.',
   items: [
     {
-      title: '3-Axis Milling Operations',
+      title: 'Computer-controlled machines',
     },
     {
-      title: 'High-Precision Turning',
+      title: 'High Precision and Accuracy',
     },
     {
-      title: 'Complex Surface Machining',
+      title: 'Complex  Geometric and Rotational Shapes',
     },
     {
-      title: 'Multi-Material Processing',
-    },
-    {
-      title: 'Prototype Development',
-    },
-    {
-      title: 'Production-Scale Manufacturing',
-    },
+      title: 'Efficient for varied production scales',
+    }
   ],
   image: {
     src: turningImg,
@@ -308,9 +261,9 @@ export const stepsHome: StepsProps = {
   id: 'steps-on-home',
   hasBackground: false,
   isReversed: false,
-  isImageDisplayed: true,
+  isImageDisplayed: false,
   image: {
-    src: processImg,
+    src: millingImg,
     alt: 'CNC Manufacturing Process',
   },
   header: {
