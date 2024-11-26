@@ -27,10 +27,25 @@ export const headerData: HeaderProps = {
     {
       label: 'Services',
       href: '/',
-    },
-    {
-      label: 'About',
-      href: '/about',
+      icon: IconChevronDown,
+      links: [
+        {
+          label: 'Machines',
+          href: '/#contentOne-on-home-one',
+        },
+        {
+          label: 'Materials',
+          href: '/#features-accepted-materials',
+        },
+        {
+          label: 'Ordering Process',
+          href: '/#steps-on-home',
+        },
+        {
+          label: 'Industries',
+          href: '/#features-three-on-about',
+        },
+      ],
     },
     {
       label: 'Blog',
@@ -50,11 +65,10 @@ export const headerData: HeaderProps = {
       text: 'Get Quote',
       href: '/contact#form',
       targetBlank: false,
-      btnType: 'primary',
     },
   ],
   isSticky: true,
-  showToggleTheme: true,
+  showToggleTheme: false,
   showRssFeed: false,
   position: 'right',
 };

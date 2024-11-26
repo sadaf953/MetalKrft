@@ -251,10 +251,18 @@ type HeroProps = {
 
 type FAQsProps = Widget & {
   header?: Header;
-  items?: Array<Item>;
+  tabs?: Array<{
+    link: {
+      label: string;
+      href: string;
+    };
+    items: Array<{
+      title: string;
+      description?: string;
+      icon?: Icon;
+    }>;
+  }>;
   columns?: number;
-  tabs?: Array<Tab>;
-  callToAction?: CallToActionType;
 };
 
 type CollapseProps = {

@@ -76,6 +76,13 @@ export const heroHome: HeroProps = {
     href: '/contact#form',
     icon: IconMail,
     targetBlank: false,
+    btnType: 'primary'
+  },
+  callToAction2: {
+    text: 'Capabilities',
+    href: '/#contentOne-on-home-one',
+    targetBlank: false,
+    btnType: 'secondary'
   },
   image: {
     src: heroImg,

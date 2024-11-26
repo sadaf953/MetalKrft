@@ -1,12 +1,13 @@
 import { CallToActionProps, FAQsProps } from '~/shared/types';
 import { HeroProps } from '~/shared/types';
+import { IconMinus, IconPlus } from '@tabler/icons-react';
 
 // Hero data on FAQs page *******************
 export const heroFaqs: HeroProps = {
   title: 'Frequently Asked Questions',
   subtitle: (
     <>
-      Find answers to common questions about our CNC machining services, capabilities, and processes. If you have additional questions, feel free to contact us.
+      Find answers to common questions about our CNC machining services.
     </>
   ),
   tagline: 'FAQs',
@@ -83,14 +84,11 @@ export const faqs4Faqs: FAQsProps = {
 
 // CallToAction data on FAQs page *******************
 export const callToActionFaqs: CallToActionProps = {
-  id: 'callToAction-on-faqs',
-  hasBackground: true,
-  className: 'bg-gray-100 dark:bg-gray-800/40',
   title: 'Still have questions?',
-  subtitle: 'Contact our team for detailed information about our CNC machining services.',
+  subtitle:
+    'Contact our team for detailed information about our CNC machining services.',
   callToAction: {
-    text: 'Contact Us',
+    text: 'Contact us',
     href: '/contact',
-    targetBlank: false,
   },
 };
