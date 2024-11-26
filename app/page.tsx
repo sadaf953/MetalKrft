@@ -11,14 +11,14 @@ import Content from '~/components/widgets/Content';
 
 import {
   callToActionHome,
-  featuresAbout,
   featuresHome,
   featuresQualityStandards,
   heroHome,
-  quality,
   stepsHome,
   contentHomeOne,
   contentHomeTwo,
+  featuresAcceptedMaterials,
+  features3About,
 } from '~/shared/data/pages/home.data';
 
 export const metadata: Metadata = {
@@ -31,10 +31,11 @@ const Page = () => {
       <Hero {...heroHome} />
       <Features {...featuresQualityStandards} />
       <Features {...featuresHome} />
-      <Features {...featuresAbout} />
       <Content {...contentHomeOne} />
       <Content {...contentHomeTwo} />
+      <Features {...featuresAcceptedMaterials} />
       <Steps {...stepsHome} />
+      <Features {...features3About} />
       <CallToAction {...callToActionHome} />
     </>
   );

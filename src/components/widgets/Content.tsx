@@ -19,11 +19,11 @@ const Content = ({
   <WidgetWrapper
     id={id ? id : ''}
     hasBackground={hasBackground}
-    containerClass={`${isAfterContent ? 'py-0 md:py-0 lg:py-0 pb-12 md:pb-16 lg:pb-20' : ''}`}
+    containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'py-0 md:py-0 lg:py-0 pb-12 md:pb-16 lg:pb-20' : ''}`}
   >
-    <section className={`bg-slate-900`}>
+    <div className="w-full">
       {header && <Headline header={header} titleClass="text-3xl sm:text-5xl" />}
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-full">
         <div className={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
           <div className="self-center md:basis-1/2">
             {content && <div className="mb-8 lg:mb-12 text-lg text-gray-600 dark:text-slate-400">{content}</div>}
@@ -40,7 +40,7 @@ const Content = ({
           </div>
           <div aria-hidden="true" className="mt-10 md:mt-0 md:basis-1/2">
             {image && (
-              <div className="relative m-auto max-w-4xl">
+              <div className="relative m-auto w-full">
                 <Image
                   className="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
                   src={image.src}
@@ -49,14 +49,13 @@ const Content = ({
                   alt={image.alt}
                   sizes="(max-width: 768px) 100vw, 432px"
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
                 />
               </div>
             )}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </WidgetWrapper>
 );
 

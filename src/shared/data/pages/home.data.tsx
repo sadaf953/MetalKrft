@@ -21,6 +21,17 @@ import {
   IconCertificate,
   IconTruck,
   IconRuler,
+  IconShieldCheck,
+  IconTools,
+  IconEngine,
+  IconBuildingBridge,
+  IconRecycle,
+  IconHammer,
+  IconClipboardList,
+  IconTruckDelivery,
+  IconHeartRateMonitor,
+  Icon3dCubeSphere,
+  IconRobot,
 } from '@tabler/icons-react';
 import {
   CallToActionProps,
@@ -111,10 +122,6 @@ export const featuresHome: FeaturesProps = {
       description:
         'Our Vertical Machining Centers (VMCs) and CNC Turning Machines deliver unmatched accuracy, reliability, and efficiency for diverse applications.',
       icon: IconComponents,
-      callToAction: {
-        text: 'Learn more',
-        href: '/services',
-      },
       className: 'text-gray-100',
     },
     {
@@ -122,10 +129,6 @@ export const featuresHome: FeaturesProps = {
       description:
         'We provide bespoke solutions from high-precision turning to prototype development, ensuring your project meets industry-specific requirements.',
       icon: IconListCheck,
-      callToAction: {
-        text: 'Learn more',
-        href: '/services',
-      },
       className: 'text-gray-100',
     },
     {
@@ -133,10 +136,6 @@ export const featuresHome: FeaturesProps = {
       description:
         'With a commitment to quality, MetalKraft CNC adheres to stringent inspection protocols, ensuring products meet and exceed client expectations.',
       icon: IconCheck,
-      callToAction: {
-        text: 'Learn more',
-        href: '/quality',
-      },
       className: 'text-gray-100',
     },
     {
@@ -144,10 +143,6 @@ export const featuresHome: FeaturesProps = {
       description:
         'Our streamlined workflows and advanced CAD/CAM integrations ensure projects are completed on schedule without compromising precision.',
       icon: IconRocket,
-      callToAction: {
-        text: 'Learn more',
-        href: '/process',
-      },
       className: 'text-gray-100',
     },
     {
@@ -155,10 +150,6 @@ export const featuresHome: FeaturesProps = {
       description:
         'We integrate eco-friendly practices into our machining processes, from resource-efficient operations to effective waste management.',
       icon: IconArrowsRightLeft,
-      callToAction: {
-        text: 'Learn more',
-        href: '/sustainability',
-      },
       className: 'text-gray-100',
     },
     {
@@ -166,14 +157,74 @@ export const featuresHome: FeaturesProps = {
       description:
         'We work closely with clients to develop innovative machining solutions, fostering long-term partnerships.',
       icon: IconBulb,
-      callToAction: {
-        text: 'Learn more',
-        href: '/contact',
-      },
       className: 'text-gray-100',
     },
   ],
 };
+
+export const featuresAcceptedMaterials: FeaturesProps = {
+  id: 'features-accepted-materials',
+  hasBackground: true,
+  className: 'bg-slate-100 dark:bg-slate-800/40',
+  header: {
+    title: 'Materials We Work With',
+    subtitle: 'We offer machining services for a wide range of materials to meet your specific requirements.',
+  },
+  columns: 4,
+  items: [
+    {
+      title: 'Aluminum',
+      description: 'Lightweight and corrosion-resistant',
+      icon: IconRocket,
+      className: 'hover:bg-blue-50 dark:hover:bg-blue-900/20',
+    },
+    {
+      title: 'Brass',
+      description: 'Excellent machinability and conductivity',
+      icon: IconSettings,
+      className: 'hover:bg-yellow-50 dark:hover:bg-yellow-900/20',
+    },
+    {
+      title: 'Copper',
+      description: 'High thermal and electrical conductivity',
+      icon: IconHammer,
+      className: 'hover:bg-orange-50 dark:hover:bg-orange-900/20',
+    },
+    {
+      title: 'Stainless Steel',
+      description: 'Corrosion-resistant and durable',
+      icon: IconShieldCheck,
+      className: 'hover:bg-gray-50 dark:hover:bg-gray-900/20',
+    },
+    {
+      title: 'Tool Steel',
+      description: 'High hardness and wear resistance',
+      icon: IconTools,
+      className: 'hover:bg-red-50 dark:hover:bg-red-900/20',
+    },
+    {
+      title: 'Alloy Steel',
+      description: 'Enhanced strength and properties',
+      icon: IconEngine,
+      className: 'hover:bg-purple-50 dark:hover:bg-purple-900/20',
+    },
+    {
+      title: 'Mild Steel',
+      description: 'Cost-effective and versatile',
+      icon: IconBuildingBridge,
+      className: 'hover:bg-zinc-50 dark:hover:bg-zinc-900/20',
+    },
+    {
+      title: 'Plastics',
+      description: 'Versatile engineering polymers',
+      icon: IconRecycle,
+      className: 'hover:bg-green-50 dark:hover:bg-green-900/20',
+    }
+  ],
+};
+
+
+
 
 // Industry Solutions data on Home page *******************
 export const features2Home: FeaturesProps = {
@@ -338,10 +389,6 @@ export const stepsHome: StepsProps = {
   hasBackground: false,
   isReversed: false,
   isImageDisplayed: false,
-  image: {
-    src: millingImg,
-    alt: 'CNC Manufacturing Process',
-  },
   header: {
     title: 'Our Ordering Process',
     subtitle: 'From concept to completion, we ensure precision and quality at every step.',
@@ -351,32 +398,85 @@ export const stepsHome: StepsProps = {
       title: 'Share Your Design',
       description: 'Send us your part design as a CAD file or drawing through our contact form or email.',
       icon: IconUpload,
-      href: '/contact#form',
     },
     {
-      title: 'Confirm Specifications',
-      description: 'Collaborate with our team to finalize specifications and agree on a lead time that fits your requirements.',
+      title: 'Technical Review',
+      description: 'Our engineers analyze your design for manufacturability and optimization opportunities.',
       icon: IconSettings,
     },
     {
-      title: 'Receive a Quote',
-      description: 'Once we review your design, we\'ll provide a detailed quote tailored to your project needs.',
+      title: 'Quote Generation',
+      description: 'We provide a detailed quote with pricing, timeline, and material specifications.',
       icon: IconCalculator,
     },
     {
+      title: 'Production Planning',
+      description: 'Upon approval, we create a detailed production plan and schedule your order.',
+      icon: IconClipboardList,
+    },
+    {
       title: 'Manufacturing',
-      description: 'We start production with our trusted processes, ensuring accuracy and quality throughout.',
+      description: 'Your parts are manufactured with precision using our advanced CNC machines.',
       icon: IconBuildingFactory2,
     },
     {
-      title: 'Quality Control',
-      description: 'All parts undergo thorough inspections to meet the required standards before delivery.',
-      icon: IconCertificate,
+      title: 'Quality & Delivery',
+      description: 'Final inspection is performed before secure packaging and prompt delivery.',
+      icon: IconTruckDelivery,
+    },
+  ],
+  callToAction: {
+    text: 'Try Now',
+    href: '/contact#contactTwo-on-contact',
+    icon: IconRocket,
+  },
+};
+
+export const features3About: FeaturesProps = {
+  id: 'features-three-on-about',
+  hasBackground: false,
+  header: {
+    title: 'Industry Solutions',
+    subtitle:
+      'Serving diverse industries with precision components',
+  },
+  iconClass: 'w-5 h-5 p-1 bg-blue-50 rounded-sm dark:bg-slate-800',
+  items: [
+    {
+      title: 'Aerospace',
+      description:
+        'High-precision components meeting aerospace standards',
+      icon: IconRocket,
     },
     {
-      title: 'Delivery',
-      description: 'Your components are securely packaged and delivered promptly to your location.',
-      icon: IconTruck,
+      title: 'Automotive',
+      description:
+        'Quality parts for automotive applications',
+      icon: IconEngine,
+    },
+    {
+      title: 'Medical',
+      description:
+        'Precision components for medical devices',
+      icon: IconHeartRateMonitor,
+    },
+    {
+      title: 'Military and Defense',
+      description:
+        'Mission-critical components with strict specifications',
+      icon: IconShieldCheck,
+    },
+    {
+      title: 'Consumer Goods',
+      description:
+        'High-quality parts for consumer products',
+      icon: IconBuildingFactory2,
+    },
+    {
+      title: 'Robotics and Automation',
+      description:
+        'Precision parts for robotic systems and automation equipment',
+      icon: IconRobot,
     },
   ],
 };
@@ -393,42 +493,4 @@ export const callToActionHome: CallToActionProps = {
     icon: IconMail,
     targetBlank: false,
   },
-};
-
-// FAQS data on Home page *******************
-export const faqs2Home: FAQsProps = {
-  id: 'faqsTwo-on-home',
-  hasBackground: false,
-  header: {
-    title: 'Frequently Asked Questions',
-    subtitle:
-      'Find answers to common questions about our CNC machining services, capabilities, and processes.',
-    tagline: 'FAQs',
-  },
-  items: [
-    {
-      title: 'What industries do you serve?',
-      description: 'We specialize in serving automotive, aerospace, electronics, and general engineering industries. Our precision CNC machining capabilities cater to diverse manufacturing needs across these sectors.',
-    },
-    {
-      title: 'What is the typical turnaround time?',
-      description: 'Depending on project complexity, our standard delivery time ranges from 1 to 4 weeks. We provide specific timeline estimates after reviewing your project requirements and specifications.',
-    },
-    {
-      title: 'Can you handle custom designs?',
-      description: 'Absolutely! We work with client specifications to deliver tailor-made components. Our team can work from your CAD files or help develop designs based on your requirements.',
-    },
-    {
-      title: 'What materials do you work with?',
-      description: 'We handle a wide range of materials including metals like aluminum, steel, brass, and plastics like nylon and acrylic. Our machines are equipped to work with various material specifications and grades.',
-    },
-    {
-      title: 'Do you provide quality certification?',
-      description: 'Yes, we provide detailed quality inspection reports and material certifications as needed. Our quality control processes ensure all components meet specified tolerances and industry standards.',
-    },
-    {
-      title: 'What are your minimum order quantities?',
-      description: 'We accommodate both prototype and production runs. Our capacity allows us to handle orders ranging from single prototypes to large production batches.',
-    },
-  ],
 };

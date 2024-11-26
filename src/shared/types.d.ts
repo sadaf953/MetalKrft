@@ -300,6 +300,7 @@ type StepsProps = Widget & {
   image?: Image;
   isReversed?: boolean;
   isAfterContent?: boolean;
+  callToAction?: CallToActionType;
 };
 
 type TeamProps = Widget & {

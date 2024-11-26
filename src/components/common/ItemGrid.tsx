@@ -34,33 +34,27 @@ const ItemGrid = ({
         >
           {items.map(({ title, description, icon: Icon, callToAction }, index) => (
             <div key={id ? `item-${id}-${index}` : `item-grid-${index}`}>
-              <div className={(twMerge('flex flex-row max-w-md'), panelClass)}>
-                <div className="flex justify-center">
-                  {Icon ? (
-                    <Icon className={twMerge('w-6 h-6 mr-2 rtl:mr-0 rtl:ml-2', iconClass)} />
-                  ) : DefaultIcon ? (
-                    <DefaultIcon className={twMerge('w-6 h-6 mr-2 rtl:mr-0 rtl:ml-2', iconClass)} />
-                  ) : null}
-                </div>
-                <div className="mt-0.5">
+              <div className={twMerge('flex flex-row max-w-md', panelClass)}>
+                {(Icon || DefaultIcon) && (
+                  <div className="flex justify-center">
+                    {Icon ? (
+                      <Icon className={twMerge('w-6 h-6 mr-2 rtl:mr-0 rtl:ml-2', iconClass)} />
+                    ) : DefaultIcon ? (
+                      <DefaultIcon className={twMerge('w-6 h-6 mr-2 rtl:mr-0 rtl:ml-2', iconClass)} />
+                    ) : null}
+                  </div>
+                )}
+                <div>
                   {title && <h3 className={twMerge('text-xl font-bold', titleClass)}>{title}</h3>}
                   {description && (
-                    <p
-                      className={twMerge(`text-gray-600 dark:text-slate-400 ${title ? 'mt-3' : ''}`, descriptionClass)}
-                    >
+                    <p className={twMerge(`text-gray-600 dark:text-slate-400 ${title ? 'mt-3' : ''}`, descriptionClass)}>
                       {description}
                     </p>
                   )}
                   {callToAction && (
-                    <CTA
-                      callToAction={callToAction}
-                      linkClass={twMerge(
-                        `${
-                          title || description ? 'mt-3' : ''
-                        } text-primary font-bold text-blue-600 hover:underline dark:text-gray-200 cursor-pointer`,
-                        actionClass,
-                      )}
-                    />
+                    <div className={twMerge(`mt-3`, actionClass)}>
+                      <CTA callToAction={callToAction} />
+                    </div>
                   )}
                 </div>
               </div>
