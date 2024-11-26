@@ -2,7 +2,8 @@
 publishDate: '2023-09-11'
 title: 'How CNC Machines Work: A Detailed Explanation'
 excerpt: 'Discover the inner workings of CNC machines, their components, and how they revolutionize modern manufacturing.'
-image: '/assets/images/CNC MILLING.png'
+
+image: 'public/casting.png'
 tags: [cnc, manufacturing, automation, technology]
 date: '2023-09-11'
 ---

@@ -1,7 +1,7 @@
 const SITE = require('./src/config.js').SITE;
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
 
   trailingSlash: SITE.trailingSlash,
@@ -10,6 +10,7 @@ module.exports = {
   swcMinify: true,
   poweredByHeader: false,
   images: {
+    domains: ['src'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,5 +21,18 @@ module.exports = {
         hostname: 'source.unsplash.com',
       },
     ],
-  }
-};
+    unoptimized: true,
+  },
+  experimental: {
+    appDir: true,
+  },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+    };
+    return config;
+  },
+}
+
+module.exports = nextConfig

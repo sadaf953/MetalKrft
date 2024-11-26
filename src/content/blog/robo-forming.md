@@ -2,7 +2,7 @@
 publishDate: '2023-09-09'
 title: 'Robotic Metal Forming: The Future of Manufacturing'
 excerpt: 'Explore how robotic systems are revolutionizing metal forming processes with increased precision and efficiency.'
-image: '/assets/images/robo-forming.png'
+image: '/src/assets/images/robo-forming.png'
 tags: [robotics, automation, metal-forming, manufacturing]
 date: '2023-09-09'
 ---

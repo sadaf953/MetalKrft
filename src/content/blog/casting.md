@@ -2,12 +2,15 @@
 publishDate: '2023-09-10'
 title: 'Metal Casting: A Comprehensive Guide'
 excerpt: 'Learn about the various metal casting processes, their applications, and advantages in modern manufacturing.'
-image: '/assets/images/casting.png'
+image: 'assets/images/casting.png'
 tags: [casting, manufacturing, metals, processes]
 date: '2023-09-10'
 ---
 
 # Industrial Casting: A Comprehensive Guide to Metal Forming
+
+
+
 
 ## Introduction
 
