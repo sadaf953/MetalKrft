@@ -41,21 +41,19 @@ import turningImg from '~/assets/images/turning.png';
 export const heroHome: HeroProps = {
   title: (
     <>
-      Expert CNC Machining Solutions <span className="hidden md:inline"></span>
-      <br />
-       <span></span>{' '}
-      <span className="sm:whitespace-nowrap">for Every Industry</span>
+      Precision CNC Machining
+      <br /> and Manufacturing Solutions
     </>
   ),
   subtitle: (
     <>
-      <span className="hidden md:inline">
+      <span className="text-sm sm:text-base md:text-lg">
         <span className="font-semibold">
           MetalKraft CNC 
         </span>{' '}
         specializes in high-quality machining services including{' '}
         <em>CNC milling</em>, <em>turning</em> and <em>Custom Component Production</em>.
-        <br />
+        <br className="hidden sm:block" />
         From prototypes to production runs, we deliver precision-engineered solutions for automotive, aerospace, and beyond.
       </span>
     </>
@@ -66,10 +64,6 @@ export const heroHome: HeroProps = {
     icon: IconMail,
     targetBlank: false,
   },
-  // callToAction2: {
-  //   text: 'Learn more',
-  //   href: '/',
-  // },
   image: {
     src: heroImg,
     alt: 'Hero MetalKraft CNC',

@@ -33,6 +33,10 @@ export const headerData: HeaderProps = {
       href: '/about',
     },
     {
+      label: 'Blog',
+      href: '/blog',
+    },
+    {
       label: 'Contact',
       href: '/contact',
     },
