@@ -13,6 +13,7 @@ import {
   callToActionHome,
   featuresAbout,
   featuresHome,
+  featuresQualityStandards,
   heroHome,
   quality,
   stepsHome,
@@ -21,13 +22,15 @@ import {
 } from '~/shared/data/pages/home.data';
 
 export const metadata: Metadata = {
-  title: SITE.title,
+  title: 'Home',
 };
 
 const Page = () => {
   return (
     <>
       <Hero {...heroHome} />
+      <Features {...featuresQualityStandards} />
+      <Features {...featuresHome} />
       <Features {...featuresAbout} />
       <Content {...contentHomeOne} />
       <Content {...contentHomeTwo} />

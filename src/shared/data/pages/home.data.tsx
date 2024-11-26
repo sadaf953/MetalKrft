@@ -55,6 +55,8 @@ export const heroHome: HeroProps = {
         <em>CNC milling</em>, <em>turning</em> and <em>Custom Component Production</em>.
         <br className="hidden sm:block" />
         From prototypes to production runs, we deliver precision-engineered solutions for automotive, aerospace, and beyond.
+        <br />
+        <br />
       </span>
     </>
   ),
@@ -84,33 +86,94 @@ export const heroHome: HeroProps = {
   ],
 };
 
-export const featuresAbout: FeaturesProps = {
-  id: 'features-on-about',
+
+// Features data on Home page *******************
+
+export const featuresHome: FeaturesProps = {
+  id: 'features-on-home',
   hasBackground: true,
-  className: 'bg-slate-100 dark:bg-slate-800/40',
+  columns: 3,
+  className: 'bg-[#203352]',
   header: {
-    title: 'Quality Assurance',
+    title: (
+      <>
+        Why Choose <span className="whitespace-nowrap">MetalKraft CNC</span>
+      </>
+    ),
     subtitle:
-      'Our commitment to excellence',
+      "Experience excellence in precision manufacturing with our state-of-the-art CNC capabilities, industry expertise, and commitment to quality.",
+    tagline: 'Features',
+    className: 'text-gray-100',
   },
-  columns: 2,
   items: [
     {
-      title: 'ISO 9001:2015 Certified',
+      title: 'State-of-the-Art CNC Machinery',
       description:
-        'Maintaining highest quality standards',
+        'Our Vertical Machining Centers (VMCs) and CNC Turning Machines deliver unmatched accuracy, reliability, and efficiency for diverse applications.',
       icon: IconComponents,
+      callToAction: {
+        text: 'Learn more',
+        href: '/services',
+      },
+      className: 'text-gray-100',
     },
     {
-      title: 'Advanced Inspection',
+      title: 'Tailored to Your Needs',
       description:
-        'State-of-the-art measurement equipment',
-      icon: IconRuler,
+        'We provide bespoke solutions from high-precision turning to prototype development, ensuring your project meets industry-specific requirements.',
+      icon: IconListCheck,
+      callToAction: {
+        text: 'Learn more',
+        href: '/services',
+      },
+      className: 'text-gray-100',
+    },
+    {
+      title: 'Exceeding Industry Standards',
+      description:
+        'With a commitment to quality, MetalKraft CNC adheres to stringent inspection protocols, ensuring products meet and exceed client expectations.',
+      icon: IconCheck,
+      callToAction: {
+        text: 'Learn more',
+        href: '/quality',
+      },
+      className: 'text-gray-100',
+    },
+    {
+      title: 'Efficient and Timely Delivery',
+      description:
+        'Our streamlined workflows and advanced CAD/CAM integrations ensure projects are completed on schedule without compromising precision.',
+      icon: IconRocket,
+      callToAction: {
+        text: 'Learn more',
+        href: '/process',
+      },
+      className: 'text-gray-100',
+    },
+    {
+      title: 'Environmentally Conscious Manufacturing',
+      description:
+        'We integrate eco-friendly practices into our machining processes, from resource-efficient operations to effective waste management.',
+      icon: IconArrowsRightLeft,
+      callToAction: {
+        text: 'Learn more',
+        href: '/sustainability',
+      },
+      className: 'text-gray-100',
+    },
+    {
+      title: 'Client-Centered Collaboration',
+      description:
+        'We work closely with clients to develop innovative machining solutions, fostering long-term partnerships.',
+      icon: IconBulb,
+      callToAction: {
+        text: 'Learn more',
+        href: '/contact',
+      },
+      className: 'text-gray-100',
     },
   ],
 };
-
-// Features data on Home page *******************
 
 // Industry Solutions data on Home page *******************
 export const features2Home: FeaturesProps = {
@@ -182,6 +245,25 @@ export const features2Home: FeaturesProps = {
         text: 'Learn more',
         href: '/industries/industrial-equipment',
       },
+    },
+  ],
+};
+
+export const featuresQualityStandards: FeaturesProps = {
+  id: 'features-quality-standards',
+  hasBackground: false,
+  columns: 2,
+  className: 'bg-[#112745] text-white py-8',
+  items: [
+    {
+      title: 'ISO 9001:2015 Certified',
+      description: 'Maintaining highest quality standards',
+      icon: IconCertificate,
+    },
+    {
+      title: 'Advanced Inspection',
+      description: 'State-of-the-art measurement equipment',
+      icon: IconRuler,
     },
   ],
 };

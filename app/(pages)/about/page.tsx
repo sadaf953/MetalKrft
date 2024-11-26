@@ -7,18 +7,16 @@ import {
   featuresFourAbout,
   features3About,
   featuresAcceptedMaterials,
-  featuresHome,
 } from '~/shared/data/pages/about.data';
 
 export const metadata: Metadata = {
-  title: 'About us',
+  title: 'About Us',
 };
 
 const Page = () => {
   return (
     <>
       <Hero2 {...hero2About} />
-      <Features {...featuresHome} />
       <Features {...featuresFourAbout} />
       <Features {...features3About} />
       <Features {...featuresAcceptedMaterials} />

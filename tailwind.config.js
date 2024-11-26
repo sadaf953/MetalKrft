@@ -9,6 +9,16 @@ module.exports = {
       colors: {
         primary: colors.blue,
         secondary: colors.blue,
+        custom: {
+          blue: {
+            light: '#0A61C9',
+            medium: '#064089',
+            dark: '#07326A',
+          },
+          gray: {
+            hero: '#799496', // New hero background color
+          },
+        },
       },
       fontFamily: {
         sans: ['var(--font-custom)', ...defaultTheme.fontFamily.sans],

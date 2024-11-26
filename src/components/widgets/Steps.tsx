@@ -15,15 +15,9 @@ const Steps = ({
   hasBackground = false,
 }: StepsProps) => (
   <WidgetWrapper id={id ? id : ''} hasBackground={hasBackground} containerClass="max-w-6xl ">
-    <div
-      className={`flex flex-col gap-8 md:gap-12 ${isReversed ? 'md:flex-row-reverse' : ''} ${
-        isImageDisplayed ? 'md:flex-row' : ''
-      } bg-blue-50 dark:bg-blue-900/20 p-8 md:p-12 rounded-xl`}
-    >
+    <section className={`bg-blue-950 ${isReversed ? 'md:flex-row-reverse' : ''} ${isImageDisplayed ? 'md:flex-row' : ''}`}>
       <div
-        className={`md:py-4 ${
-          isImageDisplayed ? 'md:pr-16 md:rtl:pr-0 md:rtl:pl-16 md:basis-1/2' : 'max-w-4xl mx-auto md:self-center'
-        }`}
+        className={`flex flex-col gap-8 md:gap-12 p-8 md:p-12 rounded-xl ${isImageDisplayed ? 'md:basis-1/2' : 'max-w-4xl mx-auto md:self-center'}`}
       >
         {header && (
           <Headline
@@ -50,7 +44,7 @@ const Steps = ({
           )}
         </div>
       )}
-    </div>
+    </section>
   </WidgetWrapper>
 );
 

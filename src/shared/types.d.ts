@@ -272,6 +272,7 @@ type CallToActionProps = Widget & {
 };
 
 type FeaturesProps = Widget & {
+  id?: string;
   header?: Header;
   items?: Array<Item>;
   columns?: 1 | 2 | 3;
@@ -280,6 +281,7 @@ type FeaturesProps = Widget & {
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
   iconClass?: string;
+  className?: string;
 };
 
 type ContentProps = Widget & {
